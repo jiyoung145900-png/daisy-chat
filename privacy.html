@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ Meta 도메인 인증 -->
+  <meta name="facebook-domain-verification" content="vmzbjgdspd678aqrh76mf7leg826di" />
+
   <title>DAISY | 개인정보처리방침</title>
   <meta name="description" content="DAISY 개인정보처리방침" />
 
@@ -20,7 +24,6 @@
       --shadow: 0 30px 120px rgba(0,0,0,.55);
     }
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple SD Gothic Neo","Noto Sans KR", sans-serif;
@@ -30,9 +33,7 @@
         radial-gradient(900px 600px at 70% 95%, rgba(127,215,255,.10), transparent 55%),
         linear-gradient(180deg, #03040a, var(--bg));
       color: var(--text);
-      overflow-x:hidden;
     }
-    a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px; }
 
     header{
@@ -40,23 +41,15 @@
       gap:14px; padding: 10px 0 16px;
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .brand{ cursor:pointer; user-select:none; display:flex; flex-direction:column; gap:6px; }
+    .brand{ display:flex; flex-direction:column; gap:6px; text-decoration:none; color:inherit;}
     .brandRow{ display:flex; align-items:center; gap:10px; }
     .mark{
       width:12px; height:12px; border-radius:3px;
       background: linear-gradient(135deg, var(--a), var(--b));
       box-shadow: 0 0 0 6px rgba(154,255,201,.10);
     }
-    .brand b{ font-size:14px; letter-spacing:.4px; text-transform:uppercase; }
-    .brand small{ font-size:12.5px; color: var(--muted); line-height:1.4; }
-
-    .chipRow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
-    .chip{
-      font-size:12px; color: rgba(255,255,255,.78);
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      padding:7px 10px; border-radius:999px; white-space:nowrap;
-    }
+    .brand b{ font-size:14px; text-transform:uppercase; }
+    .brand small{ font-size:12.5px; color: var(--muted); }
 
     .card{
       margin-top: 18px;
@@ -64,55 +57,16 @@
       border-radius: var(--r);
       background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.18));
       box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
     }
-    .card:before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.06) 12% 12.2%, transparent 12.2% 100%),
-        linear-gradient(0deg, transparent 0 32%, rgba(255,255,255,.05) 32% 32.2%, transparent 32.2% 100%);
-      pointer-events:none;
-      opacity:.7;
-    }
-    .inner{ position:relative; padding: 22px; }
+    .inner{ padding: 22px; }
 
-    h1{
-      margin:0 0 10px;
-      font-size: 26px;
-      letter-spacing: -0.5px;
-    }
-    .sub{
-      margin:0 0 16px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 14px;
-    }
+    h1{ margin:0 0 10px; font-size: 26px; }
+    .sub{ margin:0 0 16px; color: var(--muted); line-height: 1.7; font-size: 14px; }
 
-    .toc{
-      margin-top: 10px;
-      display:flex; flex-wrap:wrap; gap:8px;
-    }
-    .toc a{
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      padding: 8px 10px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      color: rgba(255,255,255,.82);
-    }
-    .toc a:hover{ border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.07); }
-
-    .section{
-      margin-top: 14px;
-      border-top: 1px solid rgba(255,255,255,.10);
-      padding-top: 14px;
-    }
+    .section{ margin-top: 14px; border-top: 1px solid rgba(255,255,255,.10); padding-top: 14px; }
     .section h2{
       margin:0 0 8px;
       font-size: 13px;
-      letter-spacing: .4px;
       text-transform: uppercase;
       color: rgba(255,255,255,.80);
     }
@@ -122,67 +76,19 @@
       border-radius: 14px;
       padding: 14px;
       line-height: 1.8;
-      color: rgba(255,255,255,.84);
       font-size: 14px;
     }
-    .box ul{ margin: 8px 0 0 18px; color: rgba(255,255,255,.82); }
-    .box li{ margin: 6px 0; }
-    .note{
-      margin-top: 10px;
-      color: rgba(255,255,255,.62);
-      font-size: 12.5px;
-      line-height: 1.7;
-    }
-    .badge{
-      display:inline-block;
-      margin-left: 8px;
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(154,255,201,.25);
-      background: rgba(154,255,201,.10);
-      color: rgba(255,255,255,.86);
-    }
-
-    .actions{
-      margin-top: 14px;
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .btn{
-      cursor:pointer;
-      border-radius: 14px;
-      padding: 11px 13px;
-      font-weight: 950;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      transition: transform .08s ease, background .2s ease, border-color .2s ease;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-    }
-    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22); }
-    .btn.primary{
-      border: 1px solid rgba(154,255,201,.35);
-      background: linear-gradient(135deg, rgba(154,255,201,.95), rgba(127,215,255,.85));
-      color: rgba(8,10,14,.92);
-    }
+    .box ul{ margin: 8px 0 0 18px; }
+    .note{ margin-top: 10px; font-size: 12.5px; color: var(--muted); }
 
     footer{
       margin-top: 16px;
       padding: 12px 2px 4px;
-      color: rgba(255,255,255,.55);
+      color: var(--muted);
       font-size: 12.5px;
-      display:flex; justify-content:space-between; gap: 10px; flex-wrap:wrap;
+      display:flex; justify-content:space-between; flex-wrap:wrap;
     }
-    footer a{ text-decoration: underline; opacity:.9; }
-
-    @media (max-width: 720px){
-      .chipRow{ justify-content:flex-start; }
-      h1{ font-size: 22px; }
-      .inner{ padding: 18px; }
-    }
+    footer a{ color:inherit; text-decoration:underline; }
   </style>
 </head>
 
@@ -191,113 +97,64 @@
     <header>
       <a class="brand" href="./index.html">
         <div class="brandRow">
-          <div class="mark" aria-hidden="true"></div>
+          <div class="mark"></div>
           <b>DAISY</b>
         </div>
-        <small>개인정보처리방침 · 로그인 없이 바로 시작</small>
+        <small>개인정보처리방침</small>
       </a>
-
-      <div class="chipRow">
-        <div class="chip">🔒 최소 수집</div>
-        <div class="chip">✅ 투명한 안내</div>
-      </div>
     </header>
 
-    <main class="card" role="main">
+    <main class="card">
       <div class="inner">
-        <h1>개인정보처리방침 <span class="badge">개인 운영자용</span></h1>
+        <h1>개인정보처리방침</h1>
         <p class="sub">
           DAISY(이하 “서비스”)는 이용자의 개인정보를 소중히 다루며 관련 법령을 준수합니다.
-          본 방침은 서비스 이용 과정에서 수집되는 정보와 이용 목적, 보관 기준 등을 안내합니다.
         </p>
 
-        <nav class="toc" aria-label="목차">
-          <a href="#s1">1. 수집하는 정보</a>
-          <a href="#s2">2. 이용 목적</a>
-          <a href="#s3">3. 보유 및 이용 기간</a>
-          <a href="#s4">4. 위탁/외부 솔루션</a>
-          <a href="#s5">5. 이용자 권리</a>
-          <a href="#s6">6. 보호 조치</a>
-          <a href="#s7">7. 문의</a>
-        </nav>
-
-        <section class="section" id="s1">
+        <section class="section">
           <h2>1. 수집하는 정보</h2>
           <div class="box">
-            서비스는 <b>회원가입 없이</b> 운영되며, 다음 정보가 수집될 수 있습니다.
+            회원가입 없이 운영되며 다음 정보가 수집될 수 있습니다.
             <ul>
-              <li><b>이용자가 채팅 중 자발적으로 입력한 정보</b> (예: 지역, 관심사 등)</li>
-              <li><b>접속 기록</b> (예: 접속 로그, IP 주소, 쿠키 등)</li>
-              <li><b>채팅 상담 내용</b> (문의/안내 과정에서 발생하는 대화 내용)</li>
-            </ul>
-            <div class="note">
-              ※ 채팅창에 민감한 개인정보(주민등록번호, 계좌정보 등)는 입력하지 않도록 안내합니다.
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="s2">
-          <h2>2. 개인정보의 이용 목적</h2>
-          <div class="box">
-            수집된 정보는 다음 목적에 한해 이용됩니다.
-            <ul>
-              <li>이용자 문의 및 채팅 응대</li>
-              <li>서비스 운영 및 안정화(오류 대응, 보안 점검 등)</li>
-              <li>서비스 개선을 위한 통계/분석(개인 식별이 어려운 형태로 처리)</li>
+              <li>채팅 중 자발적으로 입력한 정보 (예: 지역, 관심사)</li>
+              <li>접속 로그, IP 주소, 쿠키</li>
+              <li>채팅 상담 내용</li>
             </ul>
           </div>
         </section>
 
-        <section class="section" id="s3">
-          <h2>3. 보유 및 이용 기간</h2>
+        <section class="section">
+          <h2>2. 이용 목적</h2>
           <div class="box">
-            개인정보는 <b>수집 목적 달성 후 지체 없이 삭제</b>합니다.
-            다만, 관련 법령에 따라 보관이 필요한 경우 해당 법령이 정한 기간 동안 보관할 수 있습니다.
+            문의 응대, 서비스 운영, 보안 관리, 통계 분석 목적으로 사용됩니다.
           </div>
         </section>
 
-        <section class="section" id="s4">
-          <h2>4. 위탁/외부 솔루션</h2>
+        <section class="section">
+          <h2>3. 보유 기간</h2>
           <div class="box">
-            서비스는 채팅 기능 제공을 위해 외부 채팅 솔루션(<b>SalesSmartly</b>)을 사용할 수 있습니다.
-            채팅 데이터의 처리/보관 방식은 해당 솔루션의 정책에 따라 운영될 수 있습니다.
+            목적 달성 후 지체 없이 삭제합니다.
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>4. 외부 솔루션</h2>
+          <div class="box">
+            채팅 기능 제공을 위해 SalesSmartly를 사용할 수 있으며,
+            데이터 처리는 해당 솔루션 정책을 따를 수 있습니다.
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>5. 이용자 권리</h2>
+          <div class="box">
+            개인정보 열람·정정·삭제 요청은 서비스 내 채팅을 통해 가능합니다.
             <div class="note">
-              ※ 서비스는 필요한 범위 내에서만 솔루션을 사용하며, 목적 외 이용을 지양합니다.
+              시행일: 2026년 1월 27일
             </div>
           </div>
         </section>
 
-        <section class="section" id="s5">
-          <h2>5. 이용자의 권리</h2>
-          <div class="box">
-            이용자는 개인정보의 열람, 정정, 삭제를 요청할 수 있으며,
-            요청은 <b>서비스 내 채팅</b>을 통해 접수할 수 있습니다.
-          </div>
-        </section>
-
-        <section class="section" id="s6">
-          <h2>6. 개인정보 보호 조치</h2>
-          <div class="box">
-            서비스는 개인정보 보호를 위해 합리적인 기술적·관리적 보호 조치를 적용합니다.
-            다만, 이용자의 부주의(공용기기 사용, 계정/기기 공유 등)로 인해 발생한 문제에 대해서는
-            책임을 지지 않습니다.
-          </div>
-        </section>
-
-        <section class="section" id="s7">
-          <h2>7. 문의</h2>
-          <div class="box">
-            개인정보 관련 문의/요청은 <b>서비스 내 채팅</b>으로 접수해 주세요.
-            <div class="note">
-              시행일: <b>2020년 1월 1일</b>
-            </div>
-          </div>
-
-          <div class="actions">
-            <a class="btn primary" href="./index.html">홈으로 돌아가기 →</a>
-            <a class="btn" href="./terms.html">이용약관 보기</a>
-          </div>
-        </section>
       </div>
     </main>
 
