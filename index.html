@@ -13,19 +13,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="DAISY | 동네 대화 커뮤니티" />
   <meta property="og:description" content="심심할 때 가볍게 대화부터. 로그인 없이 바로 시작." />
-  <!-- ✅ 커스텀 도메인으로 맞춰두는 게 안전 -->
   <meta property="og:image" content="https://talkdaisy.com/ad.jpg" />
   <meta property="og:url" content="https://talkdaisy.com/" />
 
   <style>
     :root{
       --bg:#05060a;
+      --line:rgba(255,255,255,.12);
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.62);
 
-      --a:#9affc9;   /* mint */
-      --b:#b6a6ff;   /* lilac */
-      --c:#7fd7ff;   /* sky */
+      --a:#9affc9;
+      --b:#b6a6ff;
+      --c:#7fd7ff;
 
       --r:18px;
       --max:1080px;
@@ -513,14 +513,17 @@
     <section class="two" style="margin-top:14px;">
       <div class="panel">
         <h3>시작 방법</h3>
+
         <div class="step">
           <div class="num">1</div>
           <div><b>동네</b><span>예: 강남 / 성수 / 잠실</span></div>
         </div>
+
         <div class="step">
           <div class="num">2</div>
           <div><b>관심사</b><span>예: 산책 / 카페 / 운동</span></div>
         </div>
+
         <div class="copyBox">
           “안녕하세요! <b>[성수]</b> 쪽이에요. 관심사는 <b>[산책/카페/운동]</b>예요 🙂”
         </div>
@@ -536,6 +539,7 @@
           Q. 문의는 어디서 하나요?<br/>
           <span style="color:rgba(255,255,255,.78)">A. 오른쪽 아래 채팅 버튼을 누르세요.</span>
         </p>
+
         <div style="margin-top:12px;">
           <button class="btn primary" type="button" onclick="openChat()" style="width:100%;">
             지금 채팅 시작 →
@@ -588,7 +592,6 @@
   </script>
 
   <script>
-    // 로고 fallback: ./logo.png 있으면 이미지, 없으면 CSS 마크
     (function(){
       const img = document.querySelector(".logoImg");
       if (!img) return;
