@@ -13,12 +13,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="DAISY | 동네 대화 커뮤니티" />
   <meta property="og:description" content="심심할 때 가볍게 대화부터. 로그인 없이 바로 시작." />
-  <meta property="og:image" content="https://daisy-chat.com/ad.jpg" />
+  <!-- ✅ 커스텀 도메인으로 맞춰두는 게 안전 -->
+  <meta property="og:image" content="https://talkdaisy.com/ad.jpg" />
+  <meta property="og:url" content="https://talkdaisy.com/" />
 
   <style>
     :root{
       --bg:#05060a;
-      --line:rgba(255,255,255,.12);
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.62);
 
@@ -64,11 +65,8 @@
       user-select:none;
       min-width: 160px;
     }
-    .brandRow{
-      display:flex; align-items:center; gap: 10px;
-    }
+    .brandRow{ display:flex; align-items:center; gap: 10px; }
 
-    /* 로고: 이미지 있으면 이미지, 없으면 CSS 마크 */
     .logoWrap{
       width: 28px;
       height: 28px;
