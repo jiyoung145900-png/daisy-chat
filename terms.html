@@ -1,60 +1,330 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>DAISY 이용약관</title>
-<style>
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans KR",sans-serif;
-  max-width:900px;
-  margin:40px auto;
-  padding:20px;
-  line-height:1.8;
-}
-h1{margin-bottom:20px;}
-h2{margin-top:30px;}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DAISY | 이용약관</title>
+  <meta name="description" content="DAISY 이용약관" />
+
+  <style>
+    :root{
+      --bg:#05060a;
+      --line:rgba(255,255,255,.12);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.62);
+      --a:#9affc9;
+      --b:#b6a6ff;
+      --c:#7fd7ff;
+      --r:18px;
+      --max:980px;
+      --shadow: 0 30px 120px rgba(0,0,0,.55);
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple SD Gothic Neo","Noto Sans KR", sans-serif;
+      background:
+        radial-gradient(900px 600px at 20% 15%, rgba(154,255,201,.12), transparent 55%),
+        radial-gradient(900px 600px at 85% 20%, rgba(182,166,255,.12), transparent 60%),
+        radial-gradient(900px 600px at 70% 95%, rgba(127,215,255,.10), transparent 55%),
+        linear-gradient(180deg, #03040a, var(--bg));
+      color: var(--text);
+      overflow-x:hidden;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px; }
+
+    header{
+      display:flex; justify-content:space-between; align-items:flex-start;
+      gap:14px; padding: 10px 0 16px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .brand{ cursor:pointer; user-select:none; display:flex; flex-direction:column; gap:6px; }
+    .brandRow{ display:flex; align-items:center; gap:10px; }
+    .mark{
+      width:12px; height:12px; border-radius:3px;
+      background: linear-gradient(135deg, var(--a), var(--b));
+      box-shadow: 0 0 0 6px rgba(154,255,201,.10);
+    }
+    .brand b{ font-size:14px; letter-spacing:.4px; text-transform:uppercase; }
+    .brand small{ font-size:12.5px; color: var(--muted); line-height:1.4; }
+
+    .chipRow{ display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .chip{
+      font-size:12px; color: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding:7px 10px; border-radius:999px; white-space:nowrap;
+    }
+
+    .card{
+      margin-top: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--r);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.18));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, transparent 0 12%, rgba(255,255,255,.06) 12% 12.2%, transparent 12.2% 100%),
+        linear-gradient(0deg, transparent 0 32%, rgba(255,255,255,.05) 32% 32.2%, transparent 32.2% 100%);
+      pointer-events:none;
+      opacity:.7;
+    }
+    .inner{ position:relative; padding: 22px; }
+
+    h1{
+      margin:0 0 10px;
+      font-size: 26px;
+      letter-spacing: -0.5px;
+    }
+    .sub{
+      margin:0 0 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .toc{
+      margin-top: 10px;
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .toc a{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,.82);
+    }
+    .toc a:hover{ border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.07); }
+
+    .section{
+      margin-top: 14px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding-top: 14px;
+    }
+    .section h2{
+      margin:0 0 8px;
+      font-size: 13px;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.80);
+    }
+    .box{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 14px;
+      line-height: 1.85;
+      color: rgba(255,255,255,.84);
+      font-size: 14px;
+    }
+    .box ul{ margin: 8px 0 0 18px; color: rgba(255,255,255,.82); }
+    .box li{ margin: 6px 0; }
+    .note{
+      margin-top: 10px;
+      color: rgba(255,255,255,.62);
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+    .badge{
+      display:inline-block;
+      margin-left: 8px;
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(182,166,255,.25);
+      background: rgba(182,166,255,.10);
+      color: rgba(255,255,255,.86);
+    }
+
+    .actions{
+      margin-top: 14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .btn{
+      cursor:pointer;
+      border-radius: 14px;
+      padding: 11px 13px;
+      font-weight: 950;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22); }
+    .btn.primary{
+      border: 1px solid rgba(154,255,201,.35);
+      background: linear-gradient(135deg, rgba(154,255,201,.95), rgba(127,215,255,.85));
+      color: rgba(8,10,14,.92);
+    }
+
+    footer{
+      margin-top: 16px;
+      padding: 12px 2px 4px;
+      color: rgba(255,255,255,.55);
+      font-size: 12.5px;
+      display:flex; justify-content:space-between; gap: 10px; flex-wrap:wrap;
+    }
+    footer a{ text-decoration: underline; opacity:.9; }
+
+    @media (max-width: 720px){
+      .chipRow{ justify-content:flex-start; }
+      h1{ font-size: 22px; }
+      .inner{ padding: 18px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./index.html">
+        <div class="brandRow">
+          <div class="mark" aria-hidden="true"></div>
+          <b>DAISY</b>
+        </div>
+        <small>이용약관 · 개인 운영자용</small>
+      </a>
 
-<h1>이용약관</h1>
+      <div class="chipRow">
+        <div class="chip">📌 기본 규칙</div>
+        <div class="chip">✅ 안전한 이용</div>
+      </div>
+    </header>
 
-<h2>1. 목적</h2>
-<p>
-본 약관은 본 서비스 이용과 관련하여 서비스와 이용자 간의 권리, 의무 및 책임사항을 규정합니다.
-</p>
+    <main class="card" role="main">
+      <div class="inner">
+        <h1>이용약관 <span class="badge">개인 운영자용</span></h1>
+        <p class="sub">
+          본 약관은 DAISY(이하 “서비스”)의 이용과 관련하여 서비스와 이용자 간 권리·의무 및
+          기타 필요한 사항을 정합니다. 서비스는 회원가입 없이 채팅을 중심으로 제공될 수 있습니다.
+        </p>
 
-<h2>2. 서비스 내용</h2>
-<p>
-서비스는 관심사 기반 대화를 연결하는 온라인 채팅 안내 서비스입니다.
-서비스는 중개 플랫폼이 아니며, 이용자 간 직접적인 계약 관계를 형성하지 않습니다.
-</p>
+        <nav class="toc" aria-label="목차">
+          <a href="#t1">1. 목적</a>
+          <a href="#t2">2. 정의</a>
+          <a href="#t3">3. 서비스 제공</a>
+          <a href="#t4">4. 이용자 의무</a>
+          <a href="#t5">5. 금지행위</a>
+          <a href="#t6">6. 서비스 중단</a>
+          <a href="#t7">7. 책임 제한</a>
+          <a href="#t8">8. 분쟁/준거</a>
+        </nav>
 
-<h2>3. 이용자의 의무</h2>
-<ul>
-<li>타인에게 불쾌감, 피해를 주는 행위 금지</li>
-<li>불법 정보 또는 허위 정보 전송 금지</li>
-<li>서비스 운영을 방해하는 행위 금지</li>
-</ul>
+        <section class="section" id="t1">
+          <h2>1. 목적</h2>
+          <div class="box">
+            본 약관은 서비스 이용 조건과 절차, 서비스와 이용자 간 권리·의무, 책임사항을 규정함을 목적으로 합니다.
+          </div>
+        </section>
 
-<h2>4. 책임의 한계</h2>
-<p>
-서비스는 이용자 간 발생하는 분쟁, 오해, 손해 등에 대해 직접적인 책임을 지지 않습니다.
-이용자는 본인의 판단과 책임 하에 서비스를 이용합니다.
-</p>
+        <section class="section" id="t2">
+          <h2>2. 정의</h2>
+          <div class="box">
+            <ul>
+              <li><b>서비스</b>: DAISY가 제공하는 웹페이지 및 채팅 기반 안내/문의 기능을 의미합니다.</li>
+              <li><b>이용자</b>: 본 약관에 따라 서비스를 이용하는 모든 방문자를 의미합니다.</li>
+              <li><b>콘텐츠</b>: 이용자가 채팅에 입력하는 텍스트 등 이용 과정에서 생성되는 정보를 의미합니다.</li>
+            </ul>
+          </div>
+        </section>
 
-<h2>5. 서비스 변경 및 중단</h2>
-<p>
-서비스는 운영상 필요에 따라 사전 공지 없이 일부 기능을 변경하거나 중단할 수 있습니다.
-</p>
+        <section class="section" id="t3">
+          <h2>3. 서비스 제공</h2>
+          <div class="box">
+            1) 서비스는 회원가입 없이 이용 가능하며, 이용자의 문의/요청에 대해 채팅을 통해 안내할 수 있습니다.<br/>
+            2) 서비스는 운영상 필요에 따라 일부 기능을 변경, 추가, 중단할 수 있습니다.<br/>
+            3) 이용자는 서비스 이용 과정에서 발생하는 통신요금(데이터 요금 등)을 부담합니다.
+            <div class="note">
+              ※ 서비스 품질 개선을 위해 일시적인 점검/업데이트가 있을 수 있습니다.
+            </div>
+          </div>
+        </section>
 
-<h2>6. 약관 변경</h2>
-<p>
-약관은 필요에 따라 변경될 수 있으며, 변경 시 본 페이지를 통해 공지합니다.
-</p>
+        <section class="section" id="t4">
+          <h2>4. 이용자 의무</h2>
+          <div class="box">
+            이용자는 서비스를 이용함에 있어 다음 사항을 준수해야 합니다.
+            <ul>
+              <li>타인의 권리(초상권/저작권/개인정보 등)를 침해하지 않기</li>
+              <li>불법적 목적 또는 위법한 방식으로 서비스를 이용하지 않기</li>
+              <li>서비스 운영을 방해하거나 시스템에 과도한 부하를 유발하지 않기</li>
+            </ul>
+          </div>
+        </section>
 
-<p>시행일: 2020년 1월 1일</p>
+        <section class="section" id="t5">
+          <h2>5. 금지행위</h2>
+          <div class="box">
+            서비스는 아래 행위를 금지하며, 위반 시 이용 제한 또는 차단이 될 수 있습니다.
+            <ul>
+              <li>불법 정보의 공유, 범죄 행위의 계획/유도/조장</li>
+              <li>성적/폭력적/혐오/차별적 표현 등 타인에게 불쾌감을 주는 행위</li>
+              <li>스팸/광고/도배, 사기 또는 금전 요구</li>
+              <li>타인의 개인정보 수집·유도(전화번호, 계좌, 신분증 등)</li>
+              <li>서비스/서버/네트워크에 대한 해킹, 비정상 접근, 악성코드 유포</li>
+            </ul>
+            <div class="note">
+              ※ 채팅창에는 민감한 개인정보를 입력하지 않는 것을 권장합니다.
+            </div>
+          </div>
+        </section>
 
+        <section class="section" id="t6">
+          <h2>6. 서비스 이용 제한 및 중단</h2>
+          <div class="box">
+            1) 서비스는 시스템 점검, 장애, 보안 이슈, 운영상 필요 등으로 일시적으로 중단될 수 있습니다.<br/>
+            2) 서비스는 금지행위가 의심되거나 확인되는 경우, 사전 통지 없이 일부 기능을 제한할 수 있습니다.<br/>
+            3) 서비스는 장기적인 운영이 어려운 경우, 사전 안내 후 종료될 수 있습니다.
+          </div>
+        </section>
+
+        <section class="section" id="t7">
+          <h2>7. 책임 제한</h2>
+          <div class="box">
+            1) 서비스는 이용자가 서비스 내 채팅에 입력한 내용에 대해 이용자에게 책임이 있음을 전제로 합니다.<br/>
+            2) 서비스는 천재지변, 불가항력, 이용자의 귀책 사유로 발생한 손해에 대해 책임을 지지 않습니다.<br/>
+            3) 서비스는 외부 솔루션(예: 채팅 솔루션) 장애 또는 정책 변경으로 인한 문제에 대해 책임을 제한할 수 있습니다.<br/>
+            4) 서비스는 이용자 간 또는 이용자와 제3자 간 분쟁에 개입하지 않으며, 당사자 간 해결을 원칙으로 합니다.
+          </div>
+        </section>
+
+        <section class="section" id="t8">
+          <h2>8. 준거법 및 분쟁 해결</h2>
+          <div class="box">
+            본 약관은 대한민국 법령을 준거법으로 합니다.
+            서비스 이용과 관련하여 분쟁이 발생하는 경우, 당사자 간 협의를 통해 해결하도록 노력합니다.
+            <div class="note">
+              시행일: <b>2020년 1월 1일</b>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="./index.html">홈으로 돌아가기 →</a>
+            <a class="btn" href="./privacy.html">개인정보처리방침 보기</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <a href="./privacy.html">개인정보처리방침</a> ·
+        <a href="./terms.html">이용약관</a>
+      </div>
+      <div>© DAISY</div>
+    </footer>
+  </div>
 </body>
 </html>
